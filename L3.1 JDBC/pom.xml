@@ -9,11 +9,6 @@
     <version>1.0</version>
 
 
-    <properties>
-        <com.h2database.h2.version>1.4.187</com.h2database.h2.version>
-    </properties>
-
-
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -23,7 +18,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>${com.h2database.h2.version}</version>
+            <version>1.4.187</version>
         </dependency>
     </dependencies>
 

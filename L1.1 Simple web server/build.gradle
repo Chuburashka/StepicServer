@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'L1.1'
+version = '1.0'
+mainClassName = 'main.Main'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+repositories {
+    maven {
+        url "http://uk.maven.org/maven2"
+    }
+}
+dependencies {
+    compile group: 'org.freemarker', name: 'freemarker', version:'2.3.20'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version:'9.3.0.M0'
+    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version:'9.3.0.M0'
+    compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.5.8'
+}
+
+jar {
+    archiveName = "Server.jar"
+    manifest.attributes("Main-Class": mainClassName)
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

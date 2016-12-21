@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'L4.1'
+version = '1.0'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version:'9.3.0.M0'
+    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version:'9.3.0.M0'
+    compile group: 'org.eclipse.jetty.websocket', name: 'websocket-servlet', version:'9.3.0.M0'
+    compile group: 'org.eclipse.jetty.websocket', name: 'websocket-server', version:'9.3.0.M0'
+}
